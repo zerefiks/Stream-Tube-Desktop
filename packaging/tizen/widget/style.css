@@ -1,0 +1,58 @@
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; color: #f1f3fa; background: #12141b; font: 26px Arial, sans-serif; }
+body.playing { background: transparent; }
+main { padding: 3vh 3vw; }
+header { display: flex; align-items: center; margin-bottom: 20px; }
+.brand { font-size: 34px; font-weight: bold; white-space: nowrap; margin-right: 28px; }
+#account { margin-left: 24px; font-size: 22px; }
+.logo { display: inline-block; background: #f04756; border-radius: 10px; padding: 2px 12px; margin-right: 8px; }
+.tv, .hint { color: #aab3c9; }
+form { display: flex; flex: 1; min-width: 0; }
+.layout { display: flex; align-items: flex-start; }
+.content { flex: 1; min-width: 0; padding: 12px 0 20px 24px; }
+nav { margin: 18px 0; }
+#nav { flex: 0 0 19%; max-width: 280px; margin-top: 0; padding-right: 14px; border-right: 1px solid #33394a; }
+#nav button { display: block; width: 100%; margin: 0 0 5px; text-align: left; background: transparent; }
+#nav button, #filters button { font-size: 20px; font-size: clamp(17px, 1.55vw, 26px); padding: 9px 12px; }
+.nav-group { display: block; color: #aab3c9; font-size: 19px; margin: 18px 0 6px 12px; }
+#nav button[aria-current="page"], #filters button[aria-pressed="true"] { background: #43557b; }
+#filters button { margin-right: 8px; }
+#preferences button { display: block; width: 100%; margin: 0 0 12px; text-align: left; }
+input, button { font: inherit; color: inherit; border: 2px solid transparent; border-radius: 9px; background: #282d3e; padding: 14px 18px; }
+form input { flex: 1; min-width: 0; }
+form button, .overlay button + button, #signout { margin-left: 12px; }
+button { cursor: pointer; }
+input:focus, button:focus { outline: 3px solid #82bcff; outline-offset: 3px; }
+#status { min-height: 30px; }
+#status:empty, #play-status:empty, #watch-panel-status:empty { display: none; }
+#results { margin-top: 18px; }
+.card { display: inline-block; vertical-align: top; width: 31.33%; margin: 0 2% 20px 0; text-align: left; padding: 8px; }
+.card img { display: block; width: 100%; background: #161b27; border-radius: 6px; }
+.card.playlist { min-height: 95px; }
+.card span { display: block; font-size: 22px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 6px 6px 0; }
+.card .meta { color: #aab3c9; font-size: 17px; padding-bottom: 5px; }
+.card:focus { background: #394966; }
+#player { position: fixed; top: 0; right: 0; bottom: 0; left: 0; }
+#av, #web-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+#web-video { object-fit: contain; background: #000; }
+.overlay { position: absolute; bottom: 0; right: 0; left: 0; padding: 24px 3vw; background: rgba(0,0,0,.88); }
+.overlay button { font-size: 20px; padding: 10px 12px; margin-top: 12px; }
+.overlay.dormant { opacity: 0; }
+#player.with-panel #av, #player.with-panel #web-video { width: 68%; height: 68%; top: 16%; }
+#player.with-panel .overlay { right: 32%; }
+#watch-panel { position: absolute; top: 0; right: 0; bottom: 0; width: 32%; padding: 24px; background: #1b2030; overflow-y: auto; }
+#watch-panel h2 { font-size: 27px; margin: 0 0 17px; }
+#watch-panel .card { display: block; width: 100%; margin: 0 0 12px; }
+#watch-panel .card img { display: inline-block; width: 33%; vertical-align: middle; }
+#watch-panel .card span { display: inline-block; width: 65%; vertical-align: middle; }
+#watch-panel .chat-line { font-size: 20px; overflow-wrap: break-word; }
+#resolution-status { margin: 7px 0 0; color: #b9c7e2; font-size: 19px; }
+#resolution-status:empty { display: none; }
+#quality-menu { position: absolute; z-index: 2; right: 4vw; bottom: 24vh; width: 270px; max-height: 60vh; overflow-y: auto; padding: 14px; background: #242a3b; border: 1px solid #586686; border-radius: 12px; }
+#quality-menu button { display: block; width: 100%; margin: 0 0 6px; text-align: left; font-size: 22px; }
+#quality-menu button[aria-pressed="true"] { background: #43557b; }
+h1 { margin: 0; font-size: 32px; }
+.hint { font-size: 19px; margin-bottom: 0; }
+#login { position: fixed; top: 18%; left: 14%; width: 72%; padding: 45px; border-radius: 15px; background: #242a3b; }
+#login-code { color: #a2cfff; font-size: 46px; letter-spacing: 3px; }

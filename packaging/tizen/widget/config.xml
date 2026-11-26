@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets"
+        id="https://github.com/Avaneesh-Inamdar/Stream-Tube-Desktop/tv" version="0.2.2" viewmodes="maximized">
+  <tizen:application id="StTubeTv01.TV" package="StTubeTv01" required_version="3.0"/>
+  <tizen:profile name="tv-samsung"/>
+  <name>Stream Tube TV</name>
+  <content src="index.html"/>
+  <icon src="icon.png"/>
+  <access origin="https://www.youtube.com"/>
+  <access origin="https://youtube.com" subdomains="true"/>
+  <access origin="https://googlevideo.com" subdomains="true"/>
+  <access origin="https://i.ytimg.com"/>
+  <access origin="https://sponsor.ajay.app"/>
+  <tizen:privilege name="http://tizen.org/privilege/internet"/>
+  <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
+  <tizen:privilege name="http://tizen.org/privilege/filesystem.read"/>
+  <tizen:privilege name="http://tizen.org/privilege/filesystem.write"/>
+  <tizen:setting screen-orientation="landscape" context-menu="disable" background-support="disable"/>
+</widget>

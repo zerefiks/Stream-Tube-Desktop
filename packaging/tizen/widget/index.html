@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stream Tube TV</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="$WEBAPIS/webapis/webapis.js"></script>
+  <script defer src="youtube.js"></script>
+  <script defer src="media.js"></script>
+  <script defer src="vendor/hls.min.js"></script>
+  <script defer src="web-player.js"></script>
+  <script defer src="auth.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main id="browse">
+    <header>
+      <div class="brand"><span class="logo">▶</span> Stream Tube <span class="tv">TV</span></div>
+      <form id="search">
+        <input id="query" type="text" placeholder="Поиск или ссылка YouTube" aria-label="Поиск или ссылка YouTube" maxlength="512">
+        <button type="submit">Найти</button>
+      </form>
+      <button id="account">Войти</button>
+    </header>
+    <div class="layout">
+    <nav id="nav" aria-label="Разделы">
+      <button id="home">Главная</button>
+      <button id="shorts" data-query="лучшие shorts #shorts" data-filter="shorts">Shorts</button>
+      <button id="subscriptions">Подписки</button>
+      <button id="playlists">Плейлисты</button>
+      <button id="history">История</button>
+      <button id="cloud-history" hidden>История YouTube</button>
+      <span class="nav-group">Темы</span>
+      <button data-query="новая музыка клипы">Музыка</button>
+      <button data-query="новые научно популярные видео">Наука</button>
+      <button data-query="новые технологии обзор">Технологии</button>
+      <button data-query="новинки видеоигр обзор">Игры</button>
+      <button data-query="новости сегодня">Новости</button>
+      <button data-query="спорт лучшие моменты">Спорт</button>
+      <button data-query="прямой эфир" data-filter="live">Прямой эфир</button>
+      <button id="settings">Настройки</button>
+    </nav>
+    <div class="content">
+      <h1 id="section-title">Главная</h1>
+      <nav id="filters" aria-label="Тип результатов" hidden>
+        <button data-filter="">Все</button>
+        <button data-filter="video">Видео</button>
+        <button data-filter="channel">Каналы</button>
+        <button data-filter="playlist">Плейлисты</button>
+        <button data-filter="live">Эфиры</button>
+      </nav>
+      <p id="status" role="status"></p>
+      <section id="results" aria-label="Видео"></section>
+      <section id="preferences" hidden aria-label="Настройки">
+        <button id="preferences-account">Аккаунт YouTube</button>
+        <button id="sponsor" aria-pressed="false">SponsorBlock</button>
+        <button id="autoplay" aria-pressed="false">Автовоспроизведение</button>
+      </section>
+    </div>
+    </div>
+  </main>
+  <section id="login" hidden role="dialog" aria-label="Вход в YouTube">
+    <h1>Аккаунт YouTube</h1>
+    <p id="login-message" role="status"></p>
+    <p id="login-code"></p>
+    <button id="login-close">Назад</button>
+    <button id="signout" hidden>Выйти из аккаунта</button>
+  </section>
+  <section id="player" hidden aria-label="Проигрыватель">
+    <object id="av" type="application/avplayer"></object>
+    <video id="web-video" playsinline preload="auto" hidden></video>
+    <div class="overlay">
+      <h1 id="title"></h1>
+      <p id="play-status" role="status"></p>
+      <p id="resolution-status"></p>
+      <button id="back">Назад</button>
+      <button id="pause">Пауза / играть</button>
+      <button id="quality">Качество · Авто</button>
+      <button id="speed">Скорость · 1×</button>
+      <button id="related">Далее</button>
+      <button id="chat" hidden>Чат</button>
+      <button id="channel" hidden>Канал</button>
+      <p class="hint">↑ / ↓ выбор кнопки · ← / → перемотка на 10 секунд</p>
+    </div>
+    <div id="quality-menu" role="group" aria-label="Качество видео" hidden></div>
+    <aside id="watch-panel" hidden aria-label="Панель видео">
+      <h2 id="watch-panel-title"></h2>
+      <p id="watch-panel-status" role="status"></p>
+      <div id="watch-panel-items"></div>
+      <button id="watch-panel-close">Закрыть панель</button>
+    </aside>
+  </section>
+</body>
+</html>
